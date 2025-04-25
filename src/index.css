@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* white */
+    --foreground: 240 10% 3.9%; /* dark navy */
+    
+    --card: 0 0% 100%; /* white */
+    --card-foreground: 240 10% 3.9%; /* dark navy */
+    
+    --primary: 141 22% 29%; /* deep green (kept from original) */
+    --primary-foreground: 210 40% 98%; 
+    
+    --secondary: 240 3.7% 15.9%; /* dark navy */
+    --secondary-foreground: 0 0% 98%; /* white */
+    
+    --accent: 0 0% 0%; /* black */
+    --accent-foreground: 0 0% 98%; /* white */
+    
+    --muted: 240 3.7% 15.9%; /* dark navy */
+    --muted-foreground: 240 5% 64.9%; /* light navy */
+    
+    --border: 240 3.7% 15.9%; /* dark navy */
+    --input: 240 3.7% 15.9%; /* dark navy */
+    --ring: 240 4.9% 83.9%; /* light navy */
+
+    --radius: 1rem;
+  }
+
+  body {
+    @apply bg-gradient-to-tr from-white via-[#f0f4f8] to-[#e6eaf2] min-h-screen;
+    font-family: 'Playfair Display', serif; /* ADD THIS */
+  }
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md shadow-xl rounded-2xl border border-navy/10;
+}
+
+.smoke-bg {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0, 128, 0, 0.1) 0 20%, transparent 60%),
+    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.5) 0 15%, transparent 60%),
+    radial-gradient(ellipse at 50% 90%, rgba(0, 0, 50, 0.05) 0 12%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Fun title font */
+.shop-title {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.04em;
+}
+
+.section-heading {
+  @apply text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-green-700 to-[#243949] bg-clip-text text-transparent;
+}
